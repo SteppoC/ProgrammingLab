@@ -17,10 +17,11 @@ print('--- MODO 3 ---')
 def somma(list):
     Sum=0;
     for element in list:
-        Sum=Sum+element
+        Sum+=element  #Sum=Sum+element
     return Sum
 risult=somma(lista)
 print('La somma della lista è: {}' .format(risult))
+
 print()
 fruits = ["apple", "banana", "cherry"]
 for x in fruits:
