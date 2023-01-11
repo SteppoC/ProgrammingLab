@@ -15,15 +15,17 @@ my_file=open('shampoo_sales.csv','r')
 #leggo linea per linea e considero nel ciclo ogni volta la sola linea in considerazione
 for linea in my_file:
     #divido ogni linea in base alla virgola
-    elementiLinea=linea.split(' ')
+    elementiLinea=linea.split(',')
     #elimino l'intestazione
     if elementiLinea[0]!='Date':
     #definisco gli elementi che fan parte della linea in data e quantità
         data = elementiLinea[0]
         quantita = elementiLinea[1]
+        #trasformo la quantità in numero
+        quantitaNum = float(quantita)
         #aggiungo alla lista dei valori
-        valori.append(quantita)
+        valori.append(quantitaNum)
 #sommo le quantità
-    somma += sum(quantita)
+    somma += sum(quantitaNum)
     print(somma)
     
