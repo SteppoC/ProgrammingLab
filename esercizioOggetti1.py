@@ -19,3 +19,4 @@ class CSVFile():
 
 shampoo = CSVFile('shampoo_sales.csv')
 print(shampoo.get_data())
+
