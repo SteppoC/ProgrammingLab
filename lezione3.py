@@ -86,7 +86,7 @@ class NumericalCSVFile():
         if file_leggibile:   #se trovo il file ed è leggibile fa  tutto come nell'esercizio prima 
             lista=[]
         
-            for i,linea in enumerate(my_file): #metto un contatore
+            for i,linea in enumerate(my_file): #metto un contatore per stampare poi la riga d'errore
                 elementi=linea.split(',')
     
                 elementi[-1]=elementi[-1].strip() #formula magica per eliminare \n
