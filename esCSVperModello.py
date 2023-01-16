@@ -26,7 +26,7 @@ class CSVFile():
                     elementi[-1]=elementi[-1].strip()
                     #ritorno la lista degli elementi selezionati
                     lista.append(elementi)
-            return lista
+        return lista
 
 class NumericalCSVFile(CSVFile):
     def get_data():

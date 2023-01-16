@@ -6,23 +6,36 @@ class Model():
     def predict(self, data):
         raise NotImplementedError('Metodo non implementato')
 
-class IncrementalModel():
+class IncrementModel():
     def predict(self, data):
+        #valore precedente per far la madia poi
         prev_value = None
-        differenza_valori = []
-    for item in data:
-        if prev_value is None:
-            prev_value = item
-        else:
-            value = (item-prev_value)/2
-            prev_value = item
-            differenza_valori.append(value)
-            prediction = (sum(differenza_valori))+item
-    return prediction
+        #creo un array per contenere i conti che andrò a fare
+        lista_delta = []
+        
+        for item in data:
+            #all'inizio do il mio valore iniziale
+            if prev_value is None:
+                prev_value = item
+                print('prev_value: {}' .format(prev_value))
+            #dal secondo valore in poi
+            else:
+                #calcolo la media
+                delta = (item-prev_value)
+                #prev_value mi diventa il valore di item così al prossimo ciclo sarà il valore precendete
+                print('la media è {}' .format(delta))
+                prev_value = item
+                #popolo l'array coi valori(medie)
+                lista_delta.append(delta)
+            #sommo tutti i valori(medie) all'ultimo valore
+            prediction = (sum(lista_delta)/2)+item
+        return prediction
 
+        
+#--- provo ---
+mia_lista = [50,52,60] #predizione con [50,52,60]=65
+print(mia_lista)
 
-mia_lista = [1,5,9]
-
-incremental_model = IncrementalModel()
-prediction_value = incremental_model.prediction(mia_lista)
-print(prediction_value)
+increment_model = IncrementModel()
+prediction_value = increment_model.predict(mia_lista)
+print('la predizione è: {}' .format(prediction_value))

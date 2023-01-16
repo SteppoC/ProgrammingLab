@@ -15,6 +15,7 @@ class CSVFile():
             
             if elementi[0]!='Date':
                 lista.append(elementi)
+                
         return lista
 
 shampoo = CSVFile('shampoo_sales.csv')

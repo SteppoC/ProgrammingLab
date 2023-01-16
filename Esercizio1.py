@@ -22,6 +22,8 @@ def somma(list):
 risult=somma(lista)
 print('La somma della lista è: {}' .format(risult))
 
+print('------')
+
 print()
 fruits = ["apple", "banana", "cherry"]
 for x in fruits:
