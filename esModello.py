@@ -17,18 +17,18 @@ class IncrementModel():
             #all'inizio do il mio valore iniziale
             if prev_value is None:
                 prev_value = item
-                print('prev_value: {}' .format(prev_value))
+                print('\t*prev_value: {}' .format(prev_value))
             #dal secondo valore in poi
             else:
-                #calcolo la media
+                #calcolo il delta
                 delta = (item-prev_value)
                 #prev_value mi diventa il valore di item così al prossimo ciclo sarà il valore precendete
-                print('la media è {}' .format(delta))
+                print('\t*il delta è {}' .format(delta))
                 prev_value = item
                 #popolo l'array coi valori(medie)
                 lista_delta.append(delta)
-            #sommo tutti i valori(medie) all'ultimo valore
-            prediction = (sum(lista_delta)/2)+item
+            #calcolo la media e la sommo all'ultimo valore
+            prediction = (sum(lista_delta)/len(lista_delta))+item
         return prediction
 
         

@@ -22,9 +22,11 @@ def sum_csv(file_name):
     my_file.close()
     
     #sommo le quantità dentro la listaQuantita
-    totale=0
-    for somma in listaQuantita:
-        totale+=somma
+    #totale=0
+    #for somma in listaQuantita:
+    #    totale+=somma
+    #return totale
+    totale = sum(listaQuantita)
     return totale
 
 print(sum_csv('shampoo_sales.csv'))

@@ -14,6 +14,13 @@ class CSVFile():
         except:
             print('Errore: non riesco a leggere il file')
             file_leggibile=False
+
+        if start>=end:
+            print('forse intendevi l\'ordine inverso... ed è quello che farò')
+            new_start = end
+            end = start
+            start = new_start
+            #raise Exception('*Errore: start "{}" è >= a end"{}"'.format(start,end))
         
         if file_leggibile:   #se trovo il file ed è leggibile fa  tutto come nell'esercizio prima 
             lista=[]
@@ -28,4 +35,4 @@ class CSVFile():
             return lista
 
 shampoo = CSVFile('shampoo_sales.csv')
-print(shampoo.get_data(1,4))
+print(shampoo.get_data(4,1))
