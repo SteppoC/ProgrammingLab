@@ -16,6 +16,7 @@ class CSVFile():
         return lista
 
 
+
 class Model():
 
     def fit(self, data):
@@ -55,16 +56,14 @@ class Model():
 class IncrementModel():
     def predict(self, data):
         prediction = []
-        average = []
         lista_value = data[-24:-12]
         last_value = lista_value[-1]
         print('\t*last value: "{}"'.format(last_value))
 
         model=Model()
-        #print('\t*average in predict: "{}"'.format(average))
-        for i,item in enumerate(lista_value):
-            average[i] = model.average(lista_value)
-            prediction[i] = average + float(last_value)
+        average = model.average(data) #faccio la media con la formula media
+        print('\t*average in predict: "{}"'.format(average))
+        prediction = average + float(last_value)
         return prediction
 
     def evaluate(self, data_prediction, data_real):

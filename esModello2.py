@@ -33,6 +33,7 @@ class Model():
 
 class IncrementModel():
     def predict(self, data):
+        print('\t*IncrementalModel')       
         lista_value = [data]
         last_value = data[-1]
         print('\t*last value: "{}"'.format(last_value))
@@ -47,7 +48,7 @@ class FitIncrementModel (IncrementModel):
     
     def fit(self, dataset, datapredict):
         #self.global_avg_increment = None
-        
+        print('\t*fit')
         model = Model()
         average_dataset = model.average(dataset)
         print('\t**la media del dataset è: "{}"'.format(average_dataset))
